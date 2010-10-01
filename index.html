@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+
+Title      : FlashyWeb
+Version    : 1.0
+Released   : 20081102
+Description: A two-column, fixed-width and lightweight template ideal for 1024x768 resolutions. Suitable for blogs and small websites.
+
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Planet PostgreSQL JP</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="/static/default.css" rel="stylesheet" type="text/css" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="/?mode=rss">
+</head>
+<body>
+<!-- start header -->
+<div id="header">
+	<div id="logo">
+		<h1><a href="#">Planet PostgreSQL JP<sup></sup></a></h1>
+		<h2>The world's most advanced planet</h2>
+	</div>
+<!--
+	<div id="menu">
+		<ul>
+			<li class="active"><a href="#">homepage</a></li>
+			<li><a href="#">photo gallery</a></li>
+			<li><a href="#">about us</a></li>
+			<li><a href="#">links</a></li>
+			<li><a href="#">contact us</a></li>
+		</ul>
+	</div>
+-->
+</div>
+<!-- end header -->
+
+<!-- start page -->
+<div id="page">
+	<!-- start content -->
+	<div id="content">
+{% for item in items %}
+<div class="post">
+<h2 class="title"><a href="{{ item.link }}" title="{{ item.title }}">{{ item.title }}</a>
+<span><a href="http://b.hatena.ne.jp/entry/{{ item.link }}">
+<img src="http://b.hatena.ne.jp/entry/image/{{ item.link }}">
+</a></span>
+</h2>
+<div class="entry">
+<p>{{ item.content }}</p>
+</div>
+<div><span>{{ item.entry_date }} by {{ item.author }}</span></div>
+<div class="meta">
+<p class="links"><a class="more" href="{{ item.link }}">more...</a></p>
+</div>
+</div>
+{% endfor %}
+	</div>
+	<!-- end content -->
+	<!-- start sidebar -->
+	<div id="sidebar">
+		<ul>
+<!--
+			<li id="search">
+				<h2><b class="text1">Search</b></h2>
+				<form method="get" action="" onsubmit="return false;">
+					<fieldset>
+					<input type="text" id="s" name="s" value="動きません" />
+					<input type="submit" id="x" value="Search" />
+					</fieldset>
+				</form>
+			</li>
+-->
+			<li>
+				<img src="/static/images/logo.gif"/>
+				<h2>Subscriptions</h2>
+				<ul>
+					{% for feed in feeds %}
+					<li><a href="{{ feed.link }}"><img src="/static/images/feed-icon-10x10.png"/> {{ feed.name }}</a></li>
+					{% endfor %}
+				</ul>
+			</li>
+			<li>
+				<h2>Planetarium</h2>
+				<ul>
+					<li><a href="http://planetandroid.com/" class="author-blog">Android</a></li>
+					<li><a href="http://planet.apache.org/committers/" class="author-blog">Apache</a></li>
+					<li><a href="http://planet.classpath.org/" class="author-blog">Classpath</a></li>
+					<li><a href="http://planet.debian.net/" class="author-blog">Debian</a></li>
+					<li><a href="http://planetdrizzle.org/" class="author-blog">Drizzle</a></li>
+
+					<li><a href="http://drupal.org/planet/" class="author-blog">Drupal</a></li>
+					<li><a href="http://planet.fedoraproject.org/" class="author-blog">Fedora</a></li>
+					<li><a href="http://planet.freedesktop.org/" class="author-blog">freedesktop.org</a></li>
+					<li><a href="http://planet.gnome.org/" class="author-blog">GNOME</a></li>
+					<li><a href="http://planet.jabber.org/" class="author-blog">Jabber</a></li>
+					<li><a href="http://www.planet-java.org/" class="author-blog">Java</a></li>
+
+					<li><a href="http://planetkde.org/" class="author-blog">KDE</a></li>
+					<li><a href="http://live.linuxchix.org/" class="author-blog">LinuxChix Live</a></li>
+					<li><a href="http://planet.mozilla.org/" class="author-blog">Mozilla</a></li>
+					<li><a href="http://planet.mysql.com/" class="author-blog">MySQL</a></li>
+					<li><a href="http://jp.planet.mysql.com/" class="author-blog">MySQL(JP)</a></li>
+					<li><a href="http://planetnetbeans.org/" class="author-blog">NetBeans</a></li>
+					<li><a href="http://planet.services.openoffice.org/" class="author-blog">OpenOffice.org</a></li>
+					<li><a href="http://planet.opensolaris.org/" class="author-blog">OpenSolaris</a></li>
+
+					<li><a href="http://www.planet-ha.org/" class="author-blog">Open Source HA</a></li>
+					<li><a href="http://planet.perl.org/" class="author-blog">Perl</a></li>
+					<li><a href="http://www.planet-php.org/" class="author-blog">PHP</a></li>
+					<li><a href="http://www.planet-index.org/" class="author-blog">Planet Index</a></li>
+					<li><a href="http://planet.postgresql.org/" class="author-blog">PostgreSQL</a></li>
+					<li><a href="http://www.planetpython.org/" class="author-blog">Python</a></li>
+
+					<li><a href="http://www.planetrubyonrails.org/" class="author-blog">Ruby on Rails</a></li>
+					<li><a href="http://planetsun.org/" class="author-blog">Sun</a></li>
+					<li><a href="http://www.planetsuse.org/" class="author-blog">SuSE</a></li>
+					<li><a href="http://planet.ubuntu.com/" class="author-blog">Ubuntu</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<!-- end sidebar -->
+	<div style="clear: both;">&nbsp;</div>
+</div>
+<!-- end page -->
+<!-- start footer -->
+<div id="footer">
+<!--
+	<div id="footer-menu">
+		<ul>
+			<li class="active"><a href="#">homepage</a></li>
+			<li><a href="#">photo gallery</a></li>
+			<li><a href="#">about us</a></li>
+			<li><a href="#">links</a></li>
+			<li><a href="#">contact us</a></li>
+		</ul>
+	</div>
+-->
+	<p id="legal">(c) Planet PostgreSQL JP. Design by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>.</p>
+</div>
+<!-- end footer -->
+</body>
+</html>

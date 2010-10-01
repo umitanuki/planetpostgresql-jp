@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+
+<channel>
+	<title>Planet PostgreSQL JP</title>
+	<link>http://planetpostgresql.jp/</link>
+	<language>ja</language>
+	<description>The world's most advanced planet</description>
+
+{% for item in items %}
+<item>
+	<title>{{ item.title }}</title>
+	<guid>planetpostgresqljp-{{ item.link }}</guid>
+	<link>{{ item.link }}</link>
+	{% if item.content %}
+	<description>{{ item.content }}</description>
+	{% endif %}
+	<pubDate>{{ item.date }}</pubDate>
+	<author>{{ item.author }}</author>
+</item>
+{% endfor %}
+
+</channel>
+</rss>
